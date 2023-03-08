@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Samsung printers</title>
+</head>
+<body>
+    <h1>Select printer</h1>
+    <div id="container">
+        <form action="" method="POST">
+            {% csrf_token %}
+            <input type="radio" id="printer_floor1" name="printer" value="1">
+            <label for="printer_floor1">Floor 1</label>
+            <input type="radio" id="printer_floor2" name="printer"  value="2">
+            <label for="printer_floor2">Floor 2</label>
+            <input type="radio" id="printer_hr" name="printer" value="3">
+            <label for="printer_hr">Printer HR</label>
+
+            <input type="text" id="page_number" name="page_number" size="10" value="" placeholder="Page number">
+
+            <button type="submit" id="btn_submit" value="">Send</button>
+        </form>
+        <br/>
+        {{ response }}
+    </div>
+
+    <script src="{% static 'samsung/js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'samsung/js/customs.js' %}"></script>
+</body>
+<html>
